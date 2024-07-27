@@ -1,0 +1,86 @@
+/* Add here all your CSS customizations */
+#footer {
+	background: #383f48;
+}
+#footer h4, #footer h5 {
+	color: #fff !important;
+	font-weight: bold;
+}
+
+#footer p {
+	color: #fff;
+}
+#footer a {
+	text-decoration: underline;
+	font-weight: bold;
+}
+#footer .fa {
+	color: #fff;
+}
+
+#footer .footer-copyright p {
+	color: #fff;
+}
+.bordino {
+	border: 1px solid #ddd;
+}
+.gisutifica {
+	text-align: justify;
+}
+.spazio-sopra-no-menu {
+	height: 60px;
+}
+.spazio-sopra-si-menu {
+	height: 30px;
+}
+
+@media all and (max-width: 1024px) {
+    .sparire-mobile {
+        display: none;
+    }
+}
+#sottomenu-carbon .page-header {
+	background-color: #31a562;
+	border-bottom: 5px solid #31a562;
+	border-top: 5px solid #31a562;
+}	
+
+#sottomenu-carbon section.page-header h1 {
+    border-bottom-color: #db812d;
+}
+
+#sottomenu-mc .page-header {
+	background-color: #db812d;
+	border-bottom: 5px solid #db812d;
+	border-top: 5px solid #db812d;
+}	
+
+#sottomenu-mc section.page-header h1 {
+    border-bottom-color: #31a562;
+}
+
+thead {
+	background-color: #ba282e;
+	color: #fff;
+}
+.responsive-video {
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    position: relative;
+    margin-bottom: 15px;
+}
+.responsive-video iframe,
+.responsive-video object,
+.responsive-video embed {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.captcha {
+    max-width:800px; 
+    height: 100px;
+}
