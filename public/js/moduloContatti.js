@@ -27,7 +27,7 @@ bottoneInvio.addEventListener('click', (e) => {
     telefono=telefonoCampo.value;
     email=emailCampo.value;
     messaggio=messaggioCampo.value;
-    lang='it';
+    lang=langCampo.value;
     areaMessaggiRed.classList.remove('d-none');
     areaMessaggiRed.classList.add('d-none');
 

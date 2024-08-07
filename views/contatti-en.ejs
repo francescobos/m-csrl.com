@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+<title>M-C Srl | Contact Us</title>
+
+<%- include ('./Generics/head.ejs') %>
+</head>
+
+
+<body class="front no-sidebars node-type-page i18n-it">
+
+
+<div class="body">
+    
+    
+<%- include ('./Generics/menuArea-en.ejs') %>
+
+
+<div class="content">
+  <form class="webform-client-form webform-client-form-15" id="contact-form">
+
+    <!-- Inizio personalizzazione FP-->
+      
+      <section style="height: 40px;">
+       &nbsp;
+      </section>
+
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-6">
+
+            <h2 class="mb-sm mt-sm"><strong>Contact Us</strong></h2>
+
+            <div class="contact-form-success alert alert-success d-none mt-4" id="areaMessaggiGreen">
+              <strong>Sent</strong> Your message has been sent, we will get back to you as soon as possible.
+           </div>
+        
+            <div class="contact-form-error alert alert-danger d-none mt-4" id="areaMessaggiRed">
+                <strong>Error!</strong>The message could not be sent.
+                <span class="mail-error-message text-1 d-block"></span>
+            </div>
+
+            <div  class="form-item webform-component webform-component-textfield webform-component--azienda">
+              <label for="edit-submitted-azienda">Company</label>
+              <input class="form-control" type="text" id="azienda" name="azienda" value="" size="30" maxlength="128" />
+            </div>
+            <div class="form-item webform-component webform-component-textfield webform-component--nome-e-cognome">
+              <label class="required" for="edit-submitted-nome-e-cognome">Name and Surname</label>
+              <input required="required" class="form-control" type="text" id="nome" name="nome" value="" size="30" maxlength="128" required />
+            </div>
+            <div  class="form-item webform-component webform-component-email webform-component--e-mail">
+              <label class="required" for="edit-submitted-e-mail">E-Mail</label>
+              <input required="required" class="email form-control form-text form-email required" type="email" id="email" name="email" size="60" />
+            </div>
+            <div class="form-item webform-component webform-component-textfield webform-component--telefono">
+              <label class="required" for="edit-submitted-telefono">Phone</label>
+              <input required="required" class="form-control" type="text" id="telefono" name="telefono" value="" size="30" maxlength="128" required />
+              <input type="hidden" value="<%- lang %>" name="lang" id="lang">
+            </div>
+            <div  class="form-item webform-component webform-component-textarea webform-component--messaggio">
+              <label for="edit-submitted-messaggio">Messagge</label>
+              <div class="form-textarea-wrapper resizable"><textarea class="form-control" id="messaggio" name="messaggio" cols="60" rows="5"></textarea>
+              </div>
+            </div>
+
+<!-- captcha -->
+<!-- <div class="captcha"><input type="hidden" name="captcha_sid" value="13117" />
+<input type="hidden" name="captcha_token" value="8bc97183b447e5954e67c1ed60b7e69d" />
+<input type="hidden" name="captcha_response" value="Google no captcha" />
+<div class="g-recaptcha" data-sitekey="6Lf6qcsUAAAAAHi7VemYKwpuqgkkubAq2mmg4rEl" data-theme="light" data-type="image"></div>
+<input type="hidden" name="captcha_cacheable" value="1" />
+</div> -->
+<!-- fine captcha -->
+ 
+          <div class="form-actions">
+            <button class="btn btn-primary btn-lg mb-xlg" style="margin-top: 20px;" name="bottoneInvio" id="bottoneInvio">SUBMIT</button>
+          </div>
+          </div>
+
+          <div class="col-md-6">
+
+            <h2 class="mb-sm mt-sm"><strong>M-C SRL</strong></h2>
+            <ul class="list list-icons list-icons-style-3 mt-xlg">
+              <li><i class="fa fa-map-marker"></i> <strong>Address:</strong>Via Fulgenio Zani, 11 - 42022 Boretto (RE) Italy</li>
+              <li><i class="fa fa-phone"></i> <strong>Phone:</strong> 0522.964261</li>
+              <li><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:info@m-csrl.it">info@m-csrl.it</a></li>
+            </ul>
+
+            <hr>
+
+            <h4 class="heading-primary"><strong>When we are open</strong></h4>
+            <ul class="list list-icons list-dark mt-xlg">
+              <li><i class="fa fa-clock-o"></i> Monday - Friday from 8:30 to 12:30 | from 14:30 to 18:30 </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+    <!-- fine pagina FP -->        
+    </form>  
+</div>      
+    
+<%- include ('./Generics/footer-en.ejs') %>
+
+</div>
+
+<%- include ('./Generics/js.ejs') %>
+
+<script src="/js/moduloContatti.js"></script>
+
+</body>
+</html>

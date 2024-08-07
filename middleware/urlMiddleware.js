@@ -7,7 +7,7 @@ const checkUrl = (req, res, next) => {
         // scegli la lingua di fallback
         // orginalUrl,  riporta l'url completo PRIMA del match route in proxera.js
         // url, in questo caso, riportebbe solo ciò che è DOPO /{lingua}
-        const lingue = req.acceptsLanguages('it');
+        const lingue = req.acceptsLanguages('it', 'en');
         if (lingue) { global.lang = lingue; } 
         else { global.lang = linguaFallback; }
     } else {

@@ -14,6 +14,7 @@ if (process.env.NODE_ENV === "production") {global.production = true}
 
 // carica i moduli delle route
 const itRoutes = require('./routes/itRoutes');
+const enRoutes = require('./routes/enRoutes');
 
 // avvio di base
 app.set('view engine', 'ejs');
@@ -37,6 +38,7 @@ app.use(express.urlencoded( { extended: true } ));
 app.get('/', checkUrl, (req, res) => { res.redirect(`/${lang}`);});
 
 app.use('/it', checkUrl, itRoutes);
+app.use('/en', checkUrl, enRoutes);
 
 //avoid 404 by 301 redirect in dbTable else return 404
 app.use( (req,res) => {
