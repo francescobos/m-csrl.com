@@ -84,3 +84,8 @@ thead {
     max-width:800px; 
     height: 100px;
 }
+
+
+.d-none {
+	display: none;
+}

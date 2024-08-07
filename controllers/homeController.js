@@ -1,5 +1,5 @@
 const tools42 = require('../library/tools42')
-//const dbEsterno = require('better-sqlite3')('./data/datiEsterni.db');
+const dbEsterno = require('better-sqlite3')('./data/datiEsterni.db');
 const fs = require('fs');
 
 /* AWS Config */
@@ -116,8 +116,8 @@ const invioModuloContatti = (req, res) => {
   const messaggio = req.body.messaggio;
 
   // traduzioni errori easy easy
-  var mailKo = {it: "Purtroppo si è verificato un errore con l'email :( Potresti segnarcelo a info@fboschetti.it? Grazie!", en :"Unfortunately there was an error with the email :( Could you please send email at info@fboschetti.it? Thanks!"}
-  var fileldsKo = {it: "Purtroppo si è verificato un errore nei campi obbligatori. Potresti segnarcelo a info@fboschetti.it? Grazie!", en :"Unfortunately there was an error with the mandatory fields :( Could you please send email at info@fboschetti.it? Thanks!!"}
+  var mailKo = {it: "Purtroppo si è verificato un errore con l'email :( Potresti segnarcelo a info@fboschetti.it? Grazie!", en :"Unfortunately there was an error with the email :( Could you please send email at info@m-csrl.it? Thanks!"}
+  var fileldsKo = {it: "Purtroppo si è verificato un errore nei campi obbligatori. Potresti segnarcelo a info@m-csrl.it? Grazie!", en :"Unfortunately there was an error with the mandatory fields :( Could you please send email at info@fboschetti.it? Thanks!!"}
   var sendOk = {it: "Messaggio inviato correttamente", en :"Message sent successfully"}
 
 
@@ -142,7 +142,7 @@ const invioModuloContatti = (req, res) => {
    emailTxt = emailTxt.replace(/\|\*data\*\|/g,  tools42.getDateTime());
 
    // Template Utente
-   var emailOggettoUtente = {it: "FRANCESCO BOSCHETTI: Richiesta da modulo contatti", en: "FRANCESCO BOSCHETTI: Request from contact form"};
+   var emailOggettoUtente = {it: "MC SRL: Richiesta da modulo contatti", en: "MC SRL: Request from contact form"};
    var emailTxtUtente = fs.readFileSync (`data/transEmail/moduloContatti/Utente-${lang}.txt`, 'utf8');
    var emailHtmlUtente = fs.readFileSync (`data/transEmail/moduloContatti/Utente-${lang}.html`, 'utf8');
  
@@ -192,7 +192,17 @@ const invioModuloContatti = (req, res) => {
     .then ((data) => {} )
     .catch ( (err) => { console.log(err) } );
 
+    /* invio mail controllo per spam // to logger info quando ci sarà */
+    sendEmailAws (process.env.EMAIL_CONTROLLO, emailHtml, emailTxt, emailOggetto)
+    .then ((data) => {} )
+    .catch ( (err) => { console.log(err) } );
+
 }
+
+// const invioModuloContatti = (req, res) => {
+//   console.log(req.body);
+//   return res.json({"success":true, "messaggio": 'Ok'});
+// }
 
 module.exports = { 
     homeIndex,

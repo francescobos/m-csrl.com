@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="it">
 <head>
-<title>M-C Srl | Bovibedding - Gestione delle lettiere bovine</title>
+<title>M-C Srl | Contattaci</title>
 
 <%- include ('./Generics/head.ejs') %>
 </head>
@@ -17,7 +17,7 @@
 
 
 <div class="content">
-  <form class="webform-client-form webform-client-form-15" action="contattaci.html" method="post" id="webform-client-form-15" accept-charset="UTF-8">
+  <form class="webform-client-form webform-client-form-15" id="contact-form">
 
     <!-- Inizio personalizzazione FP-->
       
@@ -31,25 +31,36 @@
           <div class="col-md-6">
 
             <h2 class="mb-sm mt-sm"><strong>Contattaci</strong></h2>
+
+            <div class="contact-form-success alert alert-success d-none mt-4" id="areaMessaggiGreen">
+              <strong>Inviato</strong> Il messaggio è stato inviato, ti risponderemo il più presto possibile.
+           </div>
+        
+            <div class="contact-form-error alert alert-danger d-none mt-4" id="areaMessaggiRed">
+                <strong>Errore!</strong> Non è stato possibile inviare il messaggio.
+                <span class="mail-error-message text-1 d-block"></span>
+            </div>
+
             <div  class="form-item webform-component webform-component-textfield webform-component--azienda">
               <label for="edit-submitted-azienda">Azienda</label>
-              <input class="form-control" type="text" id="edit-submitted-azienda" name="submitted[azienda]" value="" size="30" maxlength="128" />
+              <input class="form-control" type="text" id="azienda" name="azienda" value="" size="30" maxlength="128" />
             </div>
             <div class="form-item webform-component webform-component-textfield webform-component--nome-e-cognome">
               <label class="required" for="edit-submitted-nome-e-cognome">Nome e Cognome</label>
-              <input required="required" class="form-control" type="text" id="edit-submitted-nome-e-cognome" name="submitted[nome_e_cognome]" value="" size="30" maxlength="128" required />
+              <input required="required" class="form-control" type="text" id="nome" name="nome" value="" size="30" maxlength="128" required />
             </div>
             <div  class="form-item webform-component webform-component-email webform-component--e-mail">
               <label class="required" for="edit-submitted-e-mail">E-Mail</label>
-              <input required="required" class="email form-control form-text form-email required" type="email" id="edit-submitted-e-mail" name="submitted[e_mail]" size="60" />
+              <input required="required" class="email form-control form-text form-email required" type="email" id="email" name="email" size="60" />
             </div>
             <div class="form-item webform-component webform-component-textfield webform-component--telefono">
               <label class="required" for="edit-submitted-telefono">Telefono</label>
-              <input required="required" class="form-control" type="text" id="edit-submitted-telefono" name="submitted[telefono]" value="" size="30" maxlength="128" required />
+              <input required="required" class="form-control" type="text" id="telefono" name="telefono" value="" size="30" maxlength="128" required />
+              <input type="hidden" value="<%- lang %>" name="lang" id="lang">
             </div>
             <div  class="form-item webform-component webform-component-textarea webform-component--messaggio">
               <label for="edit-submitted-messaggio">Messaggio</label>
-              <div class="form-textarea-wrapper resizable"><textarea class="form-control" id="edit-submitted-messaggio" name="submitted[messaggio]" cols="60" rows="5"></textarea>
+              <div class="form-textarea-wrapper resizable"><textarea class="form-control" id="messaggio" name="messaggio" cols="60" rows="5"></textarea>
               </div>
             </div>
 
@@ -62,7 +73,9 @@
 </div> -->
 <!-- fine captcha -->
  
-          <div class="form-actions"><input class="btn btn-primary btn-lg mb-xlg" type="submit" name="op" value="Invia" /></div>
+          <div class="form-actions">
+            <button class="btn btn-primary btn-lg mb-xlg" style="margin-top: 20px;" name="bottoneInvio" id="bottoneInvio">INVIA</button>
+          </div>
           </div>
 
           <div class="col-md-6">
@@ -71,7 +84,7 @@
             <ul class="list list-icons list-icons-style-3 mt-xlg">
               <li><i class="fa fa-map-marker"></i> <strong>Indirizzo:</strong>Via Fulgenio Zani, 11 - 42022 Boretto (RE) Italy</li>
               <li><i class="fa fa-phone"></i> <strong>Telefono:</strong> 0522.964261</li>
-              <li><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:info@fptecnica.it">info@m-csrl.it</a></li>
+              <li><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:info@m-csrl.it">info@m-csrl.it</a></li>
             </ul>
 
             <hr>
@@ -95,6 +108,8 @@
 </div>
 
 <%- include ('./Generics/js.ejs') %>
+
+<script src="/js/moduloContatti.js"></script>
 
 </body>
 </html>
